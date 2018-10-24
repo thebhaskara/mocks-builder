@@ -1,0 +1,21 @@
+.view-name {
+    min-height: 3px;
+    min-width: 3px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: ' ';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &:hover {
+        &::before {
+            background-color: rgba($color: #0000ff, $alpha: 0.2)
+        }
+    }
+    &.selected {
+        background-color: rgba($color: #0000ff, $alpha: 0.2)
+    }
+}
