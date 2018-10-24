@@ -19,6 +19,18 @@ var ControlPanel = function () {
         items.push(item);
         this.set('htmlItems', items);
         item.set('config', component);
+    });
+
+    let classes = {};
+
+    this.watch(Store, 'addClass', (component) => {
+        if (component) {
+            let { name, content } = component
+            classes[name] = '.' + name + ' {\n' + content + "\n}";
+
+            let styleEl = this.get('styleElement');
+            styleEl.innerHTML = _.values(classes).join('\n');
+        }
     })
 }
 

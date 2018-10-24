@@ -1,5 +1,30 @@
 <div>
-    <span>Add</span>
-    <button bind-click="addDiv">div</button>
-    <button bind-click="addButton">button</button>
+    <div class="section">
+        <div>Add Element</div>
+        <div>
+            <button bind-click="addDiv">div</button>
+            <button bind-click="addButton">button</button>
+        </div>
+    </div>
+    <div class="section flex column">
+        <div>Selected item</div>
+        <div>
+            <div>Classes</div>
+            <div class="flex row h-20px">
+                <input class="grow" type="text" bind-value="classes">
+                <button bind-click="applyClasses">apply</button>
+            </div>
+            <div>Content</div>
+            <div class="flex row h-20px">
+                <input class="grow" type="text" bind-value="content">
+                <button bind-click="applyContent">apply</button>
+            </div>
+        </div>
+    </div>
+    <div class="section flex column">
+        <div>Add Class</div>
+        <input type="text" bind-value="className">
+        <textarea cols="30" rows="10" bind-value="classProps"></textarea>
+        <button bind-click="addClass">add</button>
+    </div>
 </div>

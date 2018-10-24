@@ -12,10 +12,10 @@
     }
     &:hover {
         &::before {
-            background-color: rgba($color: #0000ff, $alpha: 0.2)
+            background-color: rgba($color: #0000ff, $alpha: 0.1)
         }
     }
     &.selected {
-        background-color: rgba($color: #0000ff, $alpha: 0.2)
+        background-color: rgba($color: #0000ff, $alpha: 0.1)
     }
 }

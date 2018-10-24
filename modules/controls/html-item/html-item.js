@@ -31,6 +31,16 @@ let GetHtmlItem = function (component) {
                         this.set('text', text);
                     }
                 },
+                'config.classes': function (classes) {
+                    let localClasses = this.get('classes') || {};
+                    _.each(localClasses, (value, key) => {
+                        localClasses[key] = false;
+                    })
+                    _.each(classes, (classname) => {
+                        localClasses[classname] = true;
+                    })
+                    this.set('classes', localClasses);
+                },
                 'clicked': function (event) {
                     event.stopPropagation();
                     Store.set('selectedItem', this);

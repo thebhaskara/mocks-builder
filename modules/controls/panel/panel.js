@@ -31,11 +31,26 @@ Panel.prototype = {
                 tagName: 'button',
                 text: 'button',
             })
+        },
+        addClass: function () {
+            Store.set('addClass', {
+                name: this.get('className'),
+                content: this.get('classProps'),
+            })
+            this.set('className', '')
+            this.set('classProps', '')
+        },
+        applyClasses: function () {
+            this.applyClasses();
         }
     },
     add: ['selectedComponent', function (selectedComponent, comp) {
         selectedComponent.set('add', comp);
-    }]
+    }],
+    applyClasses: ['selectedComponent', "classes", "content", function (selectedComponent, classes, content) {
+        selectedComponent.set('config.classes', classes.split(/[ ,.]+/));
+        selectedComponent.set('config.text', content || '');
+    }],
 }
 
 export default Broken.ViewModel.make(Panel);
